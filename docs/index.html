@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Relevance of NFL game statistics</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<style>
+	@import url('https://fonts.googleapis.com/css?family=Assistant:200&display=swap');
+	</style>
+</head>
+
+<body>
+	<!-- HEADER -->
+	<header id="header">
+		<!-- NAV -->
+		<div id="nav">
+			<div id="nav-top">
+				<div class="container">
+					<!-- social -->
+					<ul class="nav-social">
+						<li><a href="https://linkedin.com/in/dennisgluesenkamp" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://twitter.com/dgluesen" target="_blank"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://instagram.com/dgluesen" target="_blank"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://github.com/dgluesen" target="_blank"><i class="fa fa-github"></i></a></li>
+					</ul>
+					<!-- /social -->
+				</div>
+			</div>
+		</div>
+		<!-- /NAV -->
+
+		<!-- PAGE HEADER -->
+		<div id="post-header" class="page-header">
+			<div class="page-header-bg" style="background-image: url('./img/title2.jpg');" data-stellar-background-ratio="0.5"></div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-10">
+						<div class="post-category">
+							<a>#datascience&emsp; #machinelearning&emsp; #sportsanalytics&emsp; #nflstats</a>
+						</div>
+						<h1>Relevance of NFL game statistics</h1>
+						<ul class="post-meta">
+							<li><a href="http://dgluesen.github.io">Dennis Gluesenkamp</a></li>
+							<li>October 2019</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /PAGE HEADER -->
+	</header>
+	<!-- /HEADER -->
+
+	<!-- section -->
+	<div class="section">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-8">
+					<!-- post content -->
+					<div class="section-row">
+						<h3 style="margin-top:1.0cm;" id="introduction">Introduction</h3>
+						<p>Nowadays, sports events live above all from their media coverage and the fact that the audience can also watch them live from home. This includes cheering up winners and writing down losers. The reporting of sports events is therefore an essential factor for the popularity of a particular sport and opinions as well as judgements by experts, former professionals or other persons are a good way to polarize, explain or simply be in conversation.</p>
+						<p>In addition, many sports are now statistically fully screened. Huge amounts of data are collected and systematically evaluated for every game and every player. These figures also influence the reports and comments on the matches. They are used to underpin the own argumentation and to objectify the evaluation. The intention behind this is a rational explanation of what happened on the field. But is there any cherry picking here? Are only those statistics used in the conversation which make the result looking completely logical? And are some numbers and statistics used only for certain outcomes because it matches, although they generally have little influence or are even random?</p>
+						<p>American football in general and the NFL in particular, are also the subject of a great deal of broadcasting that is extremely difficult to comprehend. And here too - perhaps even more than in many other sports - statistics serve as argumentation. This can either be done as a statement about which statistics influence the outcome of a game more than all others as in this example refering to turnovers:</p>
+						<blockquote class="blockquote">
+							<p>Forget that the Falcons piled up more offensive yards than the Vikings, 345 to 269. Or that they had more first downs (27 to 18), ran more plays (67 to 49), were penalized less or that they won the time of possession, 30:13 to 29:47. None of that mattered because nothing turns the tide like turnovers.</p>
+							<footer class="blockquote-footer">Matthew Tabeek [<a href="#tabeek2019">1</a>]</footer>
+						</blockquote>
+						<p>Also the connection of a certain value like in the following example the 100-plus yards rushes with the overall team record is very common:</p>
+						<blockquote class="blockquote">
+							<p>Considering the depth of this backfield and Pederson's patience with the running game, it is no surprise the Eagles are 12-1 this season when the team rushes for 100-plus yards.</p>
+							<footer class="blockquote-footer">Bucky Brooks [<a href="#brooks2018">2</a>]</footer>
+						</blockquote>
+						<p>Finally, a glance at the elementary statistics is part of every match report. These figures thus provide a quantitative basis for presenting the final scores, such as in the following quote:</p>
+						<blockquote class="blockquote">
+							<p>Rodgers threw for 305 yards and three touchdowns, two of them to Aaron Jones on a big night for the Green Bay running back, and the Packers held off fill-in quarterback Matt Moore and the rest of the banged-up Chiefs for a 31-24 victory Sunday night.</p>
+							<footer class="blockquote-footer">AP [<a href="#ap2019">3</a>]</footer>
+						</blockquote>
+						<p>However, are the usual statistics like <i>total offensive yards</i>, <i>turnovers</i>, <i>rushes</i>, or others really so meaningful with regard to the outcome? Are there more important and less important variables to explain a result? In summary, the following question is therefore at the heart of this evaluation: <em>Which team statistics are particularly relevant for explaining the outcome of an NFL game?</em></p>
+						<p>In order to give an initial assessment of this and the accompanying questions, the typical team statistics of NFL games <i>(boxscores)</i> are considered part of a simple but easily understandable machine learning approach. This will reveal which features an computational algorithm would access to determine the results of games in the mass as correctly as possible. Thus, these numbers might be used as a solid basis for argumentation, whereas other statistics go rather with the flow and are used depending on the result or not.</p>
+
+						<h3 style="margin-top:1.0cm;" id="statistics">Selection of typically used statistics</h3>
+						<p></p>
+
+						<h4 style="margin-top:2.0cm;" id="references">References</h4>
+						<p id="tabeek2019">[1] Matthew Tabeek. "Turnovers too much for Falcons to overcome in loss". (2019) <a href="https://www.atlantafalcons.com/news/tabeek-turnovers-too-much-for-falcons-to-overcome-in-loss">https://www.atlantafalcons.com/news/tabeek-turnovers-too-much-for-falcons-to-overcome-in-loss</a>. Accessed: 2019-10-31</p>
+						<p id="brooks2018">[2] Bucky Brooks. "New England Patriots' 3 keys to beating Eagles in Super Bowl LII". (2018) <a href="http://www.nfl.com/news/story/0ap3000000912274/article/new-england-patriots-3-keys-to-beating-eagles-in-super-bowl-lii">http://www.nfl.com/news/story/0ap3000000912274/article/new-england-patriots-3-keys-to-beating-eagles-in-super-bowl-lii</a>. Accessed: 2018-10-31</p>
+						<p id="ap2019">[3] Associated Press. "Rodgers, Jones star for Packers in 31-24 victory over Chiefs". (2019) <a href="https://www.cbssports.com/nfl/gametracker/recap/NFL_20191027_GB@KC/">https://www.cbssports.com/nfl/gametracker/recap/NFL_20191027_GB@KC/</a>. Accessed: 2019-10-31</p>
+						<p>Photo at title by <a href="https://unsplash.com/@johntorcasio">John Torcasio</a>, in section "xyz" by <a href="https://unsplash.com/@austindistel">abc</a>, all on <a href="https://unsplash.com/@headwayio">Unsplash</a></p>
+					</div>
+					<!-- /post content -->
+				</div>
+
+				<div class="col-md-4">
+
+					<!-- category widget -->
+					<div class="aside-widget" style="margin-top:1.0cm;">
+						<div class="section-title">
+							<h2 class="title">Table of content</h2>
+						</div>
+						<div class="category-widget" style="margin-bottom:1.5cm;">
+							<ul>
+								<li><a href="#introduction">Introduction</a></li>
+								<li><a href="#statistics">Selection of typically used statistics</a></li>
+								<li><a href="#references">References</a></li>
+							</ul>
+						</div>
+					</div>
+					<!-- /category widget -->
+
+					<!-- social widget -->
+					<div class="aside-widget" style="margin-top:1.0cm;">
+						<div class="section-title">
+							<h2 class="title">Coding, visualizations and other</h2>
+						</div>
+						<div class="social-widget">
+							<ul>
+								<li>
+									<a href="#" class="social-jupyter">
+										<img src="img/jupyter.png" width="45" height="53"><br><br>
+										<span>Jupyter<br>Notebook</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="social-rmarkdown">
+										<img src="img/rmarkdown.png" width="45" height="53"><br><br>
+										<span>R Markdown</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" class="social-github">
+										<img src="img/github.png" width="53" height="53"><br><br>
+										<span>GitHub<br>Repository</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- /social widget -->
+
+					<!-- post widget -->
+					<!-- <div class="aside-widget">
+						<div class="section-title">
+							<h2 class="title">Recommendations</h2>
+						</div> -->
+						<!-- post -->
+						<!-- <div class="post post-widget">
+							<a class="post-img" href="blog-post.html"><img src="./img/widget-3.jpg" alt=""></a>
+							<div class="post-body">
+								<div class="post-category">
+									<a href="category.html">Lifestyle</a>
+								</div>
+								<h3 class="post-title"><a href="blog-post.html">Ne bonorum praesent cum, labitur persequeris definitionem quo cu?</a></h3>
+							</div>
+						</div> -->
+						<!-- /post -->
+					<!-- </div> -->
+					<!-- /post widget -->
+
+					<!-- gallery widget -->
+					<!-- <div class="aside-widget">
+						<div class="section-title">
+							<h2 class="title">Gallery</h2>
+						</div>
+						<div class="galery-widget">
+							<ul>
+								<li><a href="#"><img src="./img/galery-1.jpg" alt=""></a></li>
+								<li><a href="#"><img src="./img/galery-2.jpg" alt=""></a></li>
+								<li><a href="#"><img src="./img/galery-3.jpg" alt=""></a></li>
+								<li><a href="#"><img src="./img/galery-4.jpg" alt=""></a></li>
+								<li><a href="#"><img src="./img/galery-5.jpg" alt=""></a></li>
+								<li><a href="#"><img src="./img/galery-6.jpg" alt=""></a></li>
+							</ul>
+						</div>
+					</div> -->
+					<!-- /galery widget -->
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /SECTION -->
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="footer row">
+				<div class="col-md-6 col-md-push-9">
+					<!-- social -->
+					<ul class="nav-social">
+						<li><a href="https://linkedin.com/in/dennisgluesenkamp" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://twitter.com/dgluesen" target="_blank"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="https://instagram.com/dgluesen" target="_blank"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="https://github.com/dgluesen" target="_blank"><i class="fa fa-github"></i></a></li>
+					</ul>
+					<!-- /social -->
+				</div>
+				<div class="col-md-6 col-md-pull-6">
+					<div class="footer-copyright">
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</div>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</footer>
+	<!-- /FOOTER -->
+
+	<!-- jQuery Plugins -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
